@@ -1,0 +1,20 @@
+{
+    "liveServer.settings.port": 5501,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.ignoreFiles": [
+      "**/*.scss",
+      "**/*.ts"
+    ],
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "files.autoSave": "onFocusChange",
+    "files.associations": {
+      "*.js": "javascript",
+      "*.html": "html",
+      "*.css": "css"
+    },
+    "css.validate": true,
+    "javascript.validate.enable": true,
+    "html.validate.scripts": true
+  }
