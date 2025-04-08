@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogos Olímpicos I</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo do React" width="200">
+  <title>Galeria de Imagens</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f2f2f2;
+    }
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .galeria img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Galeria de Imagens da Internet</h1>
+
+  <div class="galeria">
+    <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d" alt="Paisagem bonita">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Montanha ao fundo">
+    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac" alt="Cachoeira">
+    <img src="https://images.unsplash.com/photo-1610878180933-d3c0ae3ca77f" alt="Floresta e neblina">
+  </div>
+  <div class="container">
+    <h1>Jogos Olímpicos I</h1>
+    <section id="menu">
+      <button onclick="mostrarTela('modalidades')">Selecionar Modalidade</button>
+      <button onclick="mostrarTela('personalizar')">Personalizar Atleta</button>
+      <button onclick="mostrarTela('ranking')">Ranking Global</button>
+      <button onclick="mostrarTela('menu')">Voltar ao Menu</button>
+      <button id="botaoSom" onclick="alternarSom()">🔊 Som Ligado</button>
+    </section>
+
+    
+    <section id="modalidades" class="tela oculto fade-in">
+      <h2>Escolha a Modalidade</h2>
+      <button onclick="iniciarJogo('corrida')">Corrida</button>
+      <button onclick="iniciarJogo('salto_distancia')">Salto em Distância</button>
+      <button onclick="iniciarJogo('salto_altura')">Salto em Altura</button>
+    </section>
+
+    <section id="personalizar" class="tela oculto">
+      <h2>Personalização do Atleta</h2>
+      <label>Nome: <input type="text" id="nomeAtleta" /></label>
+      <label>Força: <input type="range" min="1" max="100" /></label>
+      <label>Resistência: <input type="range" min="1" max="100" /></label>
+      <label>Velocidade: <input type="range" min="1" max="100" /></label>
+      <button onclick="salvarPersonalizacao()">Salvar</button>
+    </section>
+
+    <section id="ranking" class="tela oculto">
+      <h2>Ranking Global</h2>
+      <ul id="listaRanking"></ul>
+    </section>
+    <aside id="painelStatus" class="oculto">
+      <h3>Status do Atleta</h3>
+      <p><strong>Nome:</strong> <span id="statusNome">-</span></p>
+      <p><strong>Força:</strong> <span id="statusForca">-</span></p>
+      <p><strong>Resistência:</strong> <span id="statusResistencia">-</span></p>
+      <p><strong>Velocidade:</strong> <span id="statusVelocidade">-</span></p>
+    </aside>
+
+    <canvas id="canvasJogo" class="oculto"></canvas>
+    <div id="painelAtleta" class="oculto painel">
+      <h3>Status do Atleta</h3>
+      <p><strong>Nome:</strong> <span id="statusNome">-</span></p>
+      <p><strong>Velocidade:</strong> <span id="statusVelocidade">-</span></p>
+      <p><strong>Força:</strong> <span id="statusForca">-</span></p>
+      <p><strong>Resistência:</strong> <span id="statusResistencia">-</span></p>
+      <p class="verse">"Mais rápido, mais alto, mais forte!"</p>
+      <audio id="musicaFundo" src="assets/bg-music.mp3" loop autoplay></audio>
+      <audio id="efeitoClique" src="assets/efeito-clique.mp3"></audio>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
